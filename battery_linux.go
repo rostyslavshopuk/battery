@@ -22,7 +22,6 @@
 package battery
 
 import (
-	"io/ioutil"
 	"os"
 	"path/filepath"
 	"strconv"
@@ -31,7 +30,7 @@ import (
 const sysfs = "/sys/class/power_supply"
 
 func readFloat(path, filename string) (float64, error) {
-	str, err := ioutil.ReadFile(filepath.Join(path, filename))
+	str, err := MyIOUtil.ReadFile(filepath.Join(path, filename))
 	if err != nil {
 		return 0, err
 	}
@@ -51,12 +50,12 @@ func readAmp(path, filename string, volts float64) (float64, error) {
 }
 
 func isBattery(path string) bool {
-	t, err := ioutil.ReadFile(filepath.Join(path, "type"))
+	t, err := MyIOUtil.ReadFile(filepath.Join(path, "type"))
 	return err == nil && string(t) == "Battery\n"
 }
 
 func getBatteryFiles() ([]string, error) {
-	files, err := ioutil.ReadDir(sysfs)
+	files, err := MyIOUtil.ReadDir(sysfs)
 	if err != nil {
 		return nil, err
 	}
@@ -107,7 +106,7 @@ func getByPath(path string) (*Battery, error) {
 		b.Design, e.Design = readFloat(path, "energy_full_design")
 		b.ChargeRate, e.ChargeRate = readFloat(path, "power_now")
 	}
-	state, err := ioutil.ReadFile(filepath.Join(path, "status"))
+	state, err := MyIOUtil.ReadFile(filepath.Join(path, "status"))
 	if err == nil {
 		b.State, e.State = newState(string(state[:len(state)-1]))
 	} else {
