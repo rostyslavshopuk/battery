@@ -1,4 +1,4 @@
-module github.com/distatus/battery
+module github.com/rostyslavshopuk/battery
 
 go 1.13
 

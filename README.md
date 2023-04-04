@@ -1,4 +1,4 @@
-battery [![Build Status](https://travis-ci.org/distatus/battery.svg?branch=master)](https://travis-ci.org/distatus/battery) [![Go Report Card](https://goreportcard.com/badge/github.com/distatus/battery)](https://goreportcard.com/report/github.com/distatus/battery) [![GoDoc](https://godoc.org/github.com/distatus/battery?status.svg)](https://godoc.org/github.com/distatus/battery)
+battery [![Build Status](https://travis-ci.org/distatus/battery.svg?branch=master)](https://travis-ci.org/distatus/battery) [![Go Report Card](https://goreportcard.com/badge/github.com/rostyslavshopuk/battery)](https://goreportcard.com/report/github.com/rostyslavshopuk/battery) [![GoDoc](https://godoc.org/github.com/rostyslavshopuk/battery?status.svg)](https://godoc.org/github.com/rostyslavshopuk/battery)
 =======
 
 Cross-platform, normalized battery information library.
@@ -20,7 +20,7 @@ Installation
 ------------
 
 ```bash
-$ go get -u github.com/distatus/battery
+$ go get -u github.com/rostyslavshopuk/battery
 ```
 
 Code Example
@@ -30,7 +30,7 @@ Code Example
 import (
 	"fmt"
 
-	"github.com/distatus/battery"
+	"github.com/rostyslavshopuk/battery"
 )
 
 func main() {
@@ -60,7 +60,7 @@ There is also a little utility which - more or less - mimicks the GNU/Linux `acp
 *Installation*
 
 ```bash
-$ go get -u github.com/distatus/battery/cmd/battery
+$ go get -u github.com/rostyslavshopuk/battery/cmd/battery
 ```
 
 *Usage*
